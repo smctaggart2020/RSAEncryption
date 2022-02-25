@@ -22,9 +22,6 @@ M = "SUE IS TAKING A MIDTERM AND TRYING HARD TO ACE IT"
 print(Db)
 
 
-# In[2]:
-
-
 def encode_message(message):
     encoded_message = 0
     for char in message: encoded_message = 100*encoded_message + ord(char)
@@ -32,16 +29,12 @@ def encode_message(message):
 print(encode_message(M))
 
 
-# In[6]:
-
 
 encoded_message = encode_message(M)
 print(encoded_message)
 cipher_text = power_mod(encoded_message, Eb, Nb)
 print(cipher_text)
 
-
-# In[3]:
 
 
 def rsa_create_signature(message_plaintext, key_sender_modulus, key_sender_private):
@@ -51,12 +44,8 @@ def rsa_create_signature(message_plaintext, key_sender_modulus, key_sender_priva
     return power_mod(message_plaintext,key_sender_private,key_sender_modulus)
 
 
-# In[4]:
-
-
 # practice using a hash with the signature
 import hashlib
-#M = "JEFF THE GOD OF BISCUITS"
 
 hash = hashlib.sha256()
 hash.update(M.encode('UTF-8'))
@@ -69,14 +58,10 @@ hash_int = int(hash, 16)
 print(hash_int)
 
 
-# In[14]:
-
 
 alice_signature = rsa_create_signature(hash_int, Na, int(Da))
 print(f"\n{alice_signature}")
 
-
-# In[ ]:
 
 
 
