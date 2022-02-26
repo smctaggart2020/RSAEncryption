@@ -1,2 +1,2 @@
 # RSAEncryption
-# using power mode function and sage library
+# using power mod function and sage library
